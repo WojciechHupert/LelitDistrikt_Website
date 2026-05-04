@@ -58,18 +58,14 @@
 
 /* ── Architecture Diagram ───────────────────────────────────────────────── */
 .arch-diagram {
-  background: #0a0a0c;
-  background-image: 
-    linear-gradient(rgba(181, 105, 58, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(181, 105, 58, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  border: 1px solid rgba(181, 105, 58, 0.2);
-  border-radius: 4px;
-  padding: 1.5rem 3rem 3rem; /* Reduced top padding */
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
 }
 
 .arch-diagram::before {

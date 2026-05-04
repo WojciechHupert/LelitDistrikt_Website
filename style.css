@@ -8,14 +8,15 @@
 }
 
 /* Old diagram styles moved to tech-page.css */
-.tech-diagram-container-DEPRECATED {
-  display: none; /* superseded by tech-page.css */
-  background: rgba(20, 20, 25, 0.4);
-  border: 1px solid rgba(181, 105, 58, 0.15);
-  border-radius: 12px;
-  padding: 3rem;
+.arch-diagram {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .diagram-header {
@@ -564,10 +565,27 @@ p{color:var(--stone);margin-bottom:1.2rem;font-size:1rem}
 .cast-section{padding:7rem 2rem;max-width:1100px;margin:0 auto}
 .cast-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2px;background:rgba(196,185,154,.08);margin-top:4rem}
 .cast-card{background:var(--ink);padding:0}
-.cast-card-body{padding:1.5rem 1.75rem 2rem}
-.cast-role{font-size:.6rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.75rem}
-.cast-card h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--cream);margin-bottom:.6rem}
-.cast-card p{font-size:.85rem;max-width:none;margin:0}
+.cast-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+.cast-role {
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+.cast-card p {
+  font-size: .85rem;
+  max-width: none;
+  margin: 0;
+}
 .refs-section{background:linear-gradient(to bottom,transparent,rgba(196,185,154,.03),transparent);padding:7rem 2rem}
 .refs-inner{max-width:1100px;margin:0 auto}
 .refs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:3rem;margin-top:4rem}
