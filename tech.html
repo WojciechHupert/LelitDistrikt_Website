@@ -13,6 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lelit Distrikt - Technology</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tech-page.css">
 </head>
 <body>
   <div class="custom-cursor"></div>
@@ -35,44 +36,239 @@
   </nav>
 
   <header class="page-header">
-    <h1 class="reveal">The<br><em>Technology</em></h1>
+    <h1 class="reveal">The <em>Technology</em></h1>
   </header>
 
   <div class="divider"></div>
 
-  <!-- ══ LOCAL AI STACK ════════════════════════════════════════════════════ -->
-  <section class="features">
+  <!-- ══ ANIMATED STATS HERO ════════════════════════════════════════════════ -->
+  <section class="tech-stats-hero">
+    <div class="stats-row reveal">
+      <div class="stat-block">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-unit">%</div>
+        <div class="stat-label">Local Inference</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block">
+        <div class="stat-number" data-target="0">0</div>
+        <div class="stat-unit">bytes</div>
+        <div class="stat-label">Sent to Cloud</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block">
+        <div class="stat-number" data-target="100">0</div>
+        <div class="stat-unit">NPCs</div>
+        <div class="stat-label">Interactive Memory</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-block">
+        <div class="stat-number" data-target="24">0</div>
+        <div class="stat-unit">/7</div>
+        <div class="stat-label">Simulation Runtime</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ MOIRAI ARCHITECTURE ════════════════════════════════════════════════ -->
+  <section class="moirai-tech-section">
     <div class="features-inner">
-      <p class="section-label reveal">The Architecture</p>
-      <h2 class="reveal">Conversation is no longer<br><em>a script.</em></h2>
-      <p class="reveal">Lelit Distrikt 2 is powered by a custom-built AI bridge inside Unreal Engine 5.7. It is 100% local, 100% private, and runs without latency. This is the end of the "Hello Traveller" era.</p>
-      <img src="assets/img/refined/auggie2.png" alt="Auggie 3/4" style="width:100%; max-width: 600px; display:block; margin: 3rem auto 0; border-radius: 4px;" class="reveal">
-      <div class="features-grid" style="margin-top: 3rem;">
-        <div class="feature-card reveal" style="border-color: rgba(181,105,58,.3);">
-          <div class="feature-number">01</div>
-          <h3>Gemma 4 Private Brain</h3>
-          <p>Auggie thinks using high-reasoning local LLMs. No cloud, no lag, no privacy concerns. He remembers you, and every interaction is distilled into a persistent SQLite memory.</p>
+      <p class="section-label reveal">Core System</p>
+      <h2 class="reveal">Moirai: The Continuity <em>Orchestration System.</em></h2>
+      <p class="reveal" style="margin-bottom: 2.5rem;">Built on <strong>Unreal Engine 5.7</strong> with a native C++ runtime, Moirai is the canonical state authority for time, memory, and world continuity. It enforces a strict separation between <strong>System Truth</strong> (the immutable record of every interaction) and <strong>Character Perception</strong> (the subjective, emotionally biased recall each NPC experiences). Every conversation is processed through a pipeline that extracts facts, identifies emotional weight, and propagates knowledge through a social graph.</p>
+
+      <!-- Architecture Diagram -->
+      <div class="arch-diagram reveal">
+        <div class="arch-header">
+          <div class="arch-status"><span class="pulse-dot"></span> UE 5.7 // C++ // LIVE</div>
+          <div class="arch-hint" style="font-size: 0.55rem; color: var(--stone); opacity: 0.4; letter-spacing: 0.1em;">[ CLICK NODE TO EXPAND SCHEMATIC ]</div>
         </div>
-        <div class="feature-card reveal" style="border-color: rgba(181,105,58,.3);">
-          <div class="feature-number">02</div>
-          <h3>Identity-Driven Dialogue</h3>
-          <p>NPCs and interactive objects possess unique conversation identities, leading to highly personalized, context-aware interactions that evolve as they remember past encounters.</p>
+
+        <div class="arch-flow">
+          <!-- Row: Main pipeline -->
+          <div class="arch-node input-node">
+            <div class="arch-node-header">SYSTEM.IN [01]</div>
+            <div class="arch-node-title">Player I/O</div>
+            <div class="arch-node-detail">
+              <p>Raw interaction capture via custom C++ UPlayerConversationComponent. Handles asynchronous input sanitization and routing.</p>
+              <div class="node-sub-info">PORT: 8080 // TYPE: RAW_TEXT</div>
+            </div>
+          </div>
+          <div class="arch-arrow">
+            <svg viewBox="0 0 60 20">
+              <path class="flow-line" d="M0 10 L45 10" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+              <polygon points="45,7 55,10 45,13" fill="currentColor" opacity="0.6" />
+            </svg>
+          </div>
+          <div class="arch-node logic-node">
+            <div class="arch-node-header">LOGIC.INF [02]</div>
+            <div class="arch-node-title">Local Brain</div>
+            <div class="arch-node-detail">
+              <p>LM Studio / Gemma 4 9B. Local inference at FP16 precision. Zero-latency context injection via Moirai bridge.</p>
+              <div class="node-sub-info">API: OPENAI_COMPAT // MODEL: GEMMA_4</div>
+            </div>
+            <div class="node-glow"></div>
+          </div>
+          <div class="arch-arrow">
+            <svg viewBox="0 0 60 20">
+              <path class="flow-line" d="M0 10 L45 10" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+              <polygon points="45,7 55,10 45,13" fill="currentColor" opacity="0.6" />
+            </svg>
+          </div>
+          <div class="arch-node core-node">
+            <div class="arch-node-header">MOIRAI.CORE [03]</div>
+            <div class="arch-node-title">Continuity</div>
+            <div class="arch-node-detail">
+              <p>Fact extraction, action intent scheduling, and world state synthesis. Manages the Social Graph and Propagation buffers.</p>
+              <div class="node-sub-info">LANG: C++ // ENGINE: UE 5.7</div>
+            </div>
+            <div class="node-glow core-glow"></div>
+          </div>
+          <div class="arch-arrow">
+            <svg viewBox="0 0 60 20">
+              <path class="flow-line" d="M0 10 L45 10" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4" />
+              <polygon points="45,7 55,10 45,13" fill="currentColor" opacity="0.6" />
+            </svg>
+          </div>
+          <div class="arch-node output-node">
+            <div class="arch-node-header">SYSTEM.OUT [04]</div>
+            <div class="arch-node-title">NPC Recall</div>
+            <div class="arch-node-detail">
+              <p>Emotional bias injection and temporal decay filters. Dynamic response synthesis based on active relationship tensors.</p>
+              <div class="node-sub-info">FILTER: BIAS_TENSOR // TARGET: UI_WIDGET</div>
+            </div>
+          </div>
         </div>
-        <div class="feature-card reveal" style="border-color: rgba(181,105,58,.3);">
-          <div class="feature-number">03</div>
-          <h3>Player-Owned Runtime</h3>
-          <p>A robust C++ architecture ensures a stable conversation lifecycle. Enter text chat seamlessly and return to game exploration without losing control, driven entirely by localized logic.</p>
+
+        <!-- Row: Data stores -->
+        <div class="arch-stores">
+          <div class="arch-store">
+            <div class="store-icon">DB</div>
+            <div class="store-info">
+              <span class="store-name">ConversationMemory.db</span>
+              <span class="store-detail">SQLite // Append-only transcripts, MemoryRecords, ActionRecords</span>
+            </div>
+          </div>
+          <div class="arch-store">
+            <div class="store-icon">SG</div>
+            <div class="store-info">
+              <span class="store-name">Social Graph</span>
+              <span class="store-detail">Propagation events // Relationship proximity weighting</span>
+            </div>
+          </div>
+          <div class="arch-store">
+            <div class="store-icon">RF</div>
+            <div class="store-info">
+              <span class="store-name">Recall Filter</span>
+              <span class="store-detail">Human-like degradation // Emotional bias injection</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card reveal" style="border-color: rgba(181,105,58,.3);">
-          <div class="feature-number">04</div>
-          <h3>Adaptive Voice Communication</h3>
-          <p>While a robust text chat acts as the universal baseline, users with capable hardware can engage in full natural voice-to-voice conversations powered by integrated TTS & STT systems.</p>
+      </div>
+
+      <!-- Deep-dive cards -->
+      <div class="tech-deep-grid" style="margin-top: 5rem;">
+        <div class="deep-card reveal">
+          <div class="deep-card-num">01</div>
+          <h3>Dual-Layer Memory Model</h3>
+          <p>Moirai enforces a split-brain architecture. The <code>Transcripts</code> table maintains an append-only, byte-accurate record of every word spoken. The <code>MemoryRecords</code> table stores structured facts extracted by the LLM. When an NPC recalls information, it passes through a <strong>Recall Filter</strong> that introduces temporal decay, emotional weighting, and relationship-based bias, simulating how real people misremember conversations.</p>
+          <div class="deep-tags"><span>C++</span><span>SQLite</span><span>Append-Only</span></div>
         </div>
-        <div class="feature-card reveal" style="border-color: rgba(181,105,58,.3);">
-          <div class="feature-number">05</div>
-          <h3>Out-of-Bound Messaging</h3>
-          <p>Auggie's presence isn't strictly confined to the game world. In the final release, he can proactively reach out and message the player directly through WhatsApp.</p>
+        <div class="deep-card reveal">
+          <div class="deep-card-num">02</div>
+          <h3>Continuity Synthesis</h3>
+          <p>When the player returns after real-world absence, Moirai calculates elapsed time and autonomously reconstructs off-screen events. NPCs had conversations you never witnessed. Gossip traveled. Relationships shifted. The <code>ActionRecords</code> table tracks future conversational intents, ensuring characters follow through on promises and threats across sessions.</p>
+          <div class="deep-tags"><span>Time-aware</span><span>Off-screen AI</span><span>ActionRecords</span></div>
         </div>
+        <div class="deep-card reveal">
+          <div class="deep-card-num">03</div>
+          <h3>Social Propagation Engine</h3>
+          <p>Information travels through the district like gossip in a real town. When Moirai extracts a fact from a conversation, it evaluates each NPC's relationship proximity to the source and schedules <strong>propagation events</strong>. Characters learn things about you from each other, not from an omniscient system. The propagation timing uses real-world clock offsets.</p>
+          <div class="deep-tags"><span>Graph Theory</span><span>Hearsay</span><span>Async Events</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ TECH STACK ════════════════════════════════════════════════════════ -->
+  <section class="tech-stack-section">
+    <p class="reveal section-label">Architecture</p>
+    <h2 class="reveal">The <em>Tech Stack</em></h2>
+    <p class="reveal" style="margin-bottom: 4rem;">Every layer of the simulation is built on production-grade infrastructure designed for high-end PC hardware. Zero cloud dependencies. Zero subscriptions. The entire AI stack runs on your machine.</p>
+
+    <div class="stack-grid reveal">
+      <div class="stack-item">
+        <div class="stack-badge">UE</div>
+        <div class="stack-content">
+          <h4>Unreal Engine 5.7</h4>
+          <p>C++ core runtime. Custom <code>GameplayAbilities</code>, <code>EnhancedInput</code>, and conversation subsystems. All AI logic runs in native C++ for maximum performance.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-badge">NL</div>
+        <div class="stack-content">
+          <h4>Nanite &amp; Lumen</h4>
+          <p>Virtualized geometry with film-quality micro-polygon rendering. Hardware ray-traced global illumination for photorealistic Mediterranean lighting at every hour.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-badge">AI</div>
+        <div class="stack-content">
+          <h4>Local LLM Inference</h4>
+          <p>LM Studio hosting Gemma 4 on <code>localhost:1234</code>. OpenAI-compatible API. Auto-discovery with HTTP health checks. CPU fallback supported. Zero network dependency.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-badge">DB</div>
+        <div class="stack-content">
+          <h4>SQLite Persistence</h4>
+          <p>Thread-safe, encrypted local database at <code>Saved/ConversationMemory.db</code>. Tables: <code>Transcripts</code>, <code>MemoryRecords</code>, <code>ActionRecords</code>, <code>PropagationEvents</code>.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-badge">TTS</div>
+        <div class="stack-content">
+          <h4>Local Voice Synthesis</h4>
+          <p>On-device text-to-speech with per-character voice profiles. No cloud API calls. Speech recognition runs locally for full voice interaction support.</p>
+        </div>
+      </div>
+      <div class="stack-item">
+        <div class="stack-badge">RT</div>
+        <div class="stack-content">
+          <h4>Runtime Components</h4>
+          <p><code>UPlayerConversationComponent</code> owns request flow and widget state. <code>UConversationIdentityComponent</code> provides per-NPC personality and memory context injection.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ══ SPECS ═════════════════════════════════════════════════════════════ -->
+  <section class="tech-specs-section">
+    <p class="reveal section-label">Requirements</p>
+    <h2 class="reveal">Runs entirely <em>on your machine</em></h2>
+    <p class="reveal" style="margin-bottom: 4rem;">All AI (conversation, voice synthesis, speech recognition) runs locally. Nothing is sent to external servers. No subscription required. The district and everything said inside it belongs to you.</p>
+    <div class="specs-grid">
+      <div class="spec-group">
+        <h4>Minimum Requirements</h4>
+        <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">8 GB</span></div>
+        <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">20 GB</span></div>
+        <div class="spec-row"><span class="spec-label">OS</span><span class="spec-value">Windows 10 / macOS 12</span></div>
+        <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-value">CPU fallback supported</span></div>
+        <div class="spec-row"><span class="spec-label">Internet</span><span class="spec-value">Not required</span></div>
+      </div>
+      <div class="spec-group">
+        <h4>Recommended</h4>
+        <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">16 GB</span></div>
+        <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">20 GB SSD</span></div>
+        <div class="spec-row"><span class="spec-label">OS</span><span class="spec-value">Windows 11 / macOS 14</span></div>
+        <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-value">6 GB VRAM (NVIDIA / Apple Silicon)</span></div>
+        <div class="spec-row"><span class="spec-label">CPU</span><span class="spec-value">M1 or later / 6-core PC</span></div>
       </div>
     </div>
   </section>
@@ -82,13 +278,13 @@
   <!-- ══ ROADMAP ═══════════════════════════════════════════════════════════ -->
   <section class="roadmap-section">
     <p class="reveal section-label">Evolution</p>
-    <h2 class="reveal">The Path of<br><em>Time</em></h2>
+    <h2 class="reveal">Roadmap: The Path of <em>Time</em></h2>
     <p class="reveal">Trace the journey from static foundations to a living, autonomous narrative simulation.</p>
-    
+
     <div class="roadmap-timeline">
       <div class="timeline-line"></div>
       <div class="timeline-progress"></div>
-      
+
       <div class="timeline-nodes">
         <div class="timeline-node reveal">
           <div class="node-time"><span class="year">2023</span><span class="unit">Origins</span></div>
@@ -196,12 +392,13 @@
               <h3>Phase I (Completed)</h3>
               <div class="expand-icon"><span></span><span></span></div>
             </div>
-            <p class="node-summary">NPCs integrate past interactions into current context.</p>
+            <p class="node-summary">Durable facts and memory records become meaningful.</p>
             <div class="node-details">
               <ul>
-                <li>Durable facts influence future dialogue</li>
-                <li>NPCs remember prior conversations in a behaviorally visible way</li>
-                <li>Responses become increasingly context-aware over time</li>
+                <li>SQLite persistence at <code>Saved/ConversationMemory.db</code>.</li>
+                <li>Transcript storage and private fact extraction.</li>
+                <li>Canonical <code>MemoryRecords</code> table and dual-write.</li>
+                <li><strong>Action Records:</strong> Future conversational intents (follow-ups) extracted.</li>
               </ul>
             </div>
           </div>
@@ -212,15 +409,16 @@
           <div class="node-dot pulse"></div>
           <div class="node-content expandable">
             <div class="node-header">
-              <h3>Multi-NPC Awareness</h3>
+              <h3>Multi-NPC Awareness &amp; Propagation</h3>
               <div class="expand-icon"><span></span><span></span></div>
             </div>
-            <p class="node-summary">Knowledge shared dynamically across the district.</p>
+            <p class="node-summary">Knowledge shared dynamically through social propagation.</p>
             <div class="node-details">
               <ul>
-                <li>Memory becomes shareable or propagatable between characters</li>
-                <li>NPCs reference each other and reflect cross-character knowledge</li>
-                <li>Narrative meaning emerges across multiple relationships</li>
+                <li>Memory shareable between characters through Moirai's propagation events.</li>
+                <li>NPCs reference each other and reflect socially acquired knowledge.</li>
+                <li><strong>On-load continuity synthesis:</strong> Moirai reconstructs off-screen developments.</li>
+                <li>Hearsay delivery and propagation extraction logic.</li>
               </ul>
             </div>
           </div>
@@ -234,12 +432,13 @@
               <h3>World Reaction Layer</h3>
               <div class="expand-icon"><span></span><span></span></div>
             </div>
-            <p class="node-summary">Memory begins to shape world behavior.</p>
+            <p class="node-summary">Moirai begins to shape the physical environment.</p>
             <div class="node-details">
               <ul>
-                <li>Events affect environment state directly</li>
-                <li>NPC schedules, presence, and absence react to simulated events</li>
-                <li>Memory influences more than dialogue, shaping world behavior</li>
+                <li>Events affect environment state and NPC schedules directly.</li>
+                <li>Interpretation of elapsed real-world time to drive world-level shifts.</li>
+                <li>Memory influences character availability and world behavior.</li>
+                <li>Full Action Lifecycle Enforcement.</li>
               </ul>
             </div>
           </div>
@@ -253,13 +452,13 @@
               <h3>Narrative Simulation System</h3>
               <div class="expand-icon"><span></span><span></span></div>
             </div>
-            <p class="node-summary">Autonomous story evolution and expansion.</p>
+            <p class="node-summary">Moirai as a fully autonomous story evolution engine.</p>
             <div class="node-details">
               <ul>
-                <li>System generates living world dynamics autonomously</li>
-                <li>Player influences an ongoing, overarching narrative</li>
-                <li>Implementation of memory review, inspection, and migration tools</li>
-                <li>Additional hero NPCs and interactive objects</li>
+                <li>Autonomous generation of living world dynamics.</li>
+                <li>Advanced memory review and migration tools.</li>
+                <li>Full scheduler-driven on-load synthesis.</li>
+                <li>Additional hero NPCs and interactive objects.</li>
               </ul>
             </div>
           </div>
@@ -267,37 +466,6 @@
       </div>
     </div>
   </section>
-
-  <div class="divider"></div>
-
-  <!-- ══ HOW TO TRY IT: TECHNICAL ═══════════════════════════════════════════ -->
-  <section class="specs-section">
-    <p class="reveal section-label">Technical</p>
-    <h2 class="reveal">Runs entirely<br><em>on your machine</em></h2>
-    <p class="reveal">All AI (conversation, voice synthesis, speech recognition) runs locally. Nothing is sent to external servers. No subscription required after purchase. The district and everything said inside it belongs to you.</p>
-    <div class="specs-grid">
-      <div class="spec-group">
-        <h4>Minimum Requirements</h4>
-        <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">8 GB</span></div>
-        <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">20 GB</span></div>
-        <div class="spec-row"><span class="spec-label">OS</span><span class="spec-value">Windows 10 / macOS 12</span></div>
-        <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-value">CPU fallback supported</span></div>
-        <div class="spec-row"><span class="spec-label">Internet</span><span class="spec-value">Not required</span></div>
-      </div>
-      <div class="spec-group">
-        <h4>Recommended</h4>
-        <div class="spec-row"><span class="spec-label">RAM</span><span class="spec-value">16 GB</span></div>
-        <div class="spec-row"><span class="spec-label">Storage</span><span class="spec-value">20 GB SSD</span></div>
-        <div class="spec-row"><span class="spec-label">OS</span><span class="spec-value">Windows 11 / macOS 14</span></div>
-        <div class="spec-row"><span class="spec-label">GPU</span><span class="spec-value">6 GB VRAM (NVIDIA / Apple Silicon)</span></div>
-        <div class="spec-row"><span class="spec-label">CPU</span><span class="spec-value">M1 or later / 6-core PC</span></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- ══ CTA ════════════════════════════════════════════════════════════════ -->
 
   <div class="divider"></div>
 
@@ -358,5 +526,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
+  <script src="tech-page.js"></script>
 </body>
 </html>

@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
-  // 2. Magnetic Buttons (Hero CTA only, not the mailto button for reliability)
+  // 2. Magnetic Buttons (Hero CTA only)
   const magnets = document.querySelectorAll('.hero-cta-button[href="experience.html"], .cta-button:not([href^="mailto"])');
   magnets.forEach(btn => {
     btn.addEventListener('mousemove', function(e) {
@@ -146,6 +146,34 @@ document.addEventListener("DOMContentLoaded", (event) => {
       btn.style.transform = 'translate(0px, 0px)';
     });
   });
+
+  // 2b. Hero Reveal Special Logic
+  if (typeof gsap !== 'undefined') {
+    gsap.from('.hero-main-title', {
+      duration: 2,
+      y: 60,
+      autoAlpha: 0,
+      ease: "expo.out",
+      delay: 0.2
+    });
+    
+    gsap.from('.hero-right-col .hero-text-block', {
+      duration: 1.5,
+      x: 30,
+      autoAlpha: 0,
+      stagger: 0.3,
+      ease: "power4.out",
+      delay: 0.6
+    });
+
+    gsap.from('.hero-cta-button', {
+      duration: 1.5,
+      y: 20,
+      autoAlpha: 0,
+      ease: "power2.out",
+      delay: 1
+    });
+  }
 
   // 3. Expandable Elements (Roadmap & Diagram)
   const expandableItems = document.querySelectorAll('.node-content.expandable, .diagram-point.expandable');
