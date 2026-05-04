@@ -92,8 +92,8 @@
             <div class="arch-node-header">SYSTEM.IN [01]</div>
             <div class="arch-node-title">Player I/O</div>
             <div class="arch-node-detail">
-              <p>Raw interaction capture via custom C++ UPlayerConversationComponent. Handles asynchronous input sanitization and routing.</p>
-              <div class="node-sub-info">PORT: 8080 // TYPE: RAW_TEXT</div>
+              <p>Interaction capture via custom C++ frameworks. Handles asynchronous input sanitization and logic routing.</p>
+              <div class="node-sub-info">STATUS: BUFFERED // TYPE: RAW_TEXT</div>
             </div>
           </div>
           <div class="arch-arrow">
@@ -106,8 +106,8 @@
             <div class="arch-node-header">LOGIC.INF [02]</div>
             <div class="arch-node-title">Local Brain</div>
             <div class="arch-node-detail">
-              <p>LM Studio / Gemma 4 9B. Local inference at FP16 precision. Zero-latency context injection via Moirai bridge.</p>
-              <div class="node-sub-info">API: OPENAI_COMPAT // MODEL: GEMMA_4</div>
+              <p>Private inference using optimized local language models. High-fidelity reasoning with zero-latency context injection via the Moirai bridge.</p>
+              <div class="node-sub-info">ARCH: LOCAL // MODE: PRIVATE_INF</div>
             </div>
             <div class="node-glow"></div>
           </div>
@@ -147,8 +147,8 @@
           <div class="arch-store">
             <div class="store-icon">DB</div>
             <div class="store-info">
-              <span class="store-name">ConversationMemory.db</span>
-              <span class="store-detail">SQLite // Append-only transcripts, MemoryRecords, ActionRecords</span>
+              <span class="store-name">System Truth</span>
+              <span class="store-detail">Secure local storage for transcripts and structured memory records</span>
             </div>
           </div>
           <div class="arch-store">
@@ -173,13 +173,13 @@
         <div class="deep-card reveal">
           <div class="deep-card-num">01</div>
           <h3>Dual-Layer Memory Model</h3>
-          <p>Moirai enforces a split-brain architecture. The <code>Transcripts</code> table maintains an append-only, byte-accurate record of every word spoken. The <code>MemoryRecords</code> table stores structured facts extracted by the LLM. When an NPC recalls information, it passes through a <strong>Recall Filter</strong> that introduces temporal decay, emotional weighting, and relationship-based bias, simulating how real people misremember conversations.</p>
+          <p>Moirai enforces a split-brain architecture. The <strong>Transcripts</strong> record maintains an append-only, high-fidelity log of every interaction. The <strong>Memory Records</strong> store structured facts extracted by the system. When an NPC recalls information, it passes through a <strong>Recall Filter</strong> that introduces temporal decay, emotional weighting, and relationship-based bias, simulating how real people misremember conversations.</p>
           <div class="deep-tags"><span>C++</span><span>SQLite</span><span>Append-Only</span></div>
         </div>
         <div class="deep-card reveal">
           <div class="deep-card-num">02</div>
           <h3>Continuity Synthesis</h3>
-          <p>When the player returns after real-world absence, Moirai calculates elapsed time and autonomously reconstructs off-screen events. NPCs had conversations you never witnessed. Gossip traveled. Relationships shifted. The <code>ActionRecords</code> table tracks future conversational intents, ensuring characters follow through on promises and threats across sessions.</p>
+          <p>When the player returns after real-world absence, Moirai calculates elapsed time and autonomously reconstructs off-screen events. NPCs had conversations you never witnessed. Gossip traveled. Relationships shifted. Internal <strong>Action Records</strong> track future conversational intents, ensuring characters follow through on promises and threats across sessions.</p>
           <div class="deep-tags"><span>Time-aware</span><span>Off-screen AI</span><span>ActionRecords</span></div>
         </div>
         <div class="deep-card reveal">
@@ -205,7 +205,7 @@
         <div class="stack-badge">UE</div>
         <div class="stack-content">
           <h4>Unreal Engine 5.7</h4>
-          <p>C++ core runtime. Custom <code>GameplayAbilities</code>, <code>EnhancedInput</code>, and conversation subsystems. All AI logic runs in native C++ for maximum performance.</p>
+          <p>C++ core runtime. Custom gameplay frameworks and conversation subsystems. All AI logic runs in native code for maximum performance.</p>
         </div>
       </div>
       <div class="stack-item">
@@ -218,15 +218,15 @@
       <div class="stack-item">
         <div class="stack-badge">AI</div>
         <div class="stack-content">
-          <h4>Local LLM Inference</h4>
-          <p>LM Studio hosting Gemma 4 on <code>localhost:1234</code>. OpenAI-compatible API. Auto-discovery with HTTP health checks. CPU fallback supported. Zero network dependency.</p>
+          <h4>Private Local Inference</h4>
+          <p>On-device private inference engine. Fully local reasoning with zero network dependency. Optimized for hardware acceleration with fallback support.</p>
         </div>
       </div>
       <div class="stack-item">
         <div class="stack-badge">DB</div>
         <div class="stack-content">
-          <h4>SQLite Persistence</h4>
-          <p>Thread-safe, encrypted local database at <code>Saved/ConversationMemory.db</code>. Tables: <code>Transcripts</code>, <code>MemoryRecords</code>, <code>ActionRecords</code>, <code>PropagationEvents</code>.</p>
+          <h4>Secure Persistence</h4>
+          <p>Thread-safe, encrypted local storage for all persistent world state. Manages transcripts, memory records, and propagation events without cloud access.</p>
         </div>
       </div>
       <div class="stack-item">
@@ -240,7 +240,7 @@
         <div class="stack-badge">RT</div>
         <div class="stack-content">
           <h4>Runtime Components</h4>
-          <p><code>UPlayerConversationComponent</code> owns request flow and widget state. <code>UConversationIdentityComponent</code> provides per-NPC personality and memory context injection.</p>
+          <p>Native components manage request flow and interface state. Per-NPC personality and memory context are handled through specialized identity subsystems.</p>
         </div>
       </div>
     </div>
@@ -373,10 +373,10 @@
             <p class="node-summary">Foundation of the autonomous interaction system.</p>
             <div class="node-details">
               <ul>
-                <li><strong>Local AI conversation:</strong> Powered by local LM Studio inference; stable text chat path with auto-discovery.</li>
-                <li><strong>Player-owned runtime:</strong> <code>UPlayerConversationComponent</code> owns request flow, widget state, and routing (C++).</li>
-                <li><strong>Identity-driven targets:</strong> Talkable NPCs and objects use <code>UConversationIdentityComponent</code>.</li>
-                <li><strong>Persistent memory:</strong> SQLite-based storage in <code>ConversationMemory.db</code>.</li>
+                <li><strong>Local AI conversation:</strong> Powered by private local inference; stable text chat path with auto-discovery.</li>
+                <li><strong>Player-owned runtime:</strong> Specialized components manage request flow, interface state, and routing (C++).</li>
+                <li><strong>Identity-driven targets:</strong> Talkable NPCs and objects use specialized identity systems.</li>
+                <li><strong>Persistent memory:</strong> Secure local storage for all conversation data.</li>
                 <li><strong>Stable lifecycle:</strong> Seamless enter, converse, and return to game-only input.</li>
                 <li><strong>Technical baseline:</strong> UE 5.7; high-end PC target with Nanite/Lumen.</li>
               </ul>
@@ -395,9 +395,9 @@
             <p class="node-summary">Durable facts and memory records become meaningful.</p>
             <div class="node-details">
               <ul>
-                <li>SQLite persistence at <code>Saved/ConversationMemory.db</code>.</li>
+                <li>Secure local storage for all system records.</li>
                 <li>Transcript storage and private fact extraction.</li>
-                <li>Canonical <code>MemoryRecords</code> table and dual-write.</li>
+                <li>Canonical system records and dual-write.</li>
                 <li><strong>Action Records:</strong> Future conversational intents (follow-ups) extracted.</li>
               </ul>
             </div>
