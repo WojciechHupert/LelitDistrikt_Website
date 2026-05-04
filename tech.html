@@ -81,11 +81,6 @@
 
       <!-- Architecture Diagram -->
       <div class="arch-diagram reveal">
-        <div class="arch-header">
-          <div class="arch-status"><span class="pulse-dot"></span> UE 5.7 // C++ // LIVE</div>
-          <div class="arch-hint" style="font-size: 0.55rem; color: var(--stone); opacity: 0.4; letter-spacing: 0.1em;">[ CLICK NODE TO EXPAND SCHEMATIC ]</div>
-        </div>
-
         <div class="arch-flow">
           <!-- Row: Main pipeline -->
           <div class="arch-node input-node">
@@ -171,22 +166,19 @@
       <!-- Deep-dive cards -->
       <div class="tech-deep-grid" style="margin-top: 5rem;">
         <div class="deep-card reveal">
-          <div class="deep-card-num">01</div>
           <h3>Dual-Layer Memory Model</h3>
           <p>Moirai enforces a split-brain architecture. The <strong>Transcripts</strong> record maintains an append-only, high-fidelity log of every interaction. The <strong>Memory Records</strong> store structured facts extracted by the system. When an NPC recalls information, it passes through a <strong>Recall Filter</strong> that introduces temporal decay, emotional weighting, and relationship-based bias, simulating how real people misremember conversations.</p>
           <div class="deep-tags"><span>C++</span><span>SQLite</span><span>Append-Only</span></div>
         </div>
         <div class="deep-card reveal">
-          <div class="deep-card-num">02</div>
-          <h3>Continuity Synthesis</h3>
-          <p>When the player returns after real-world absence, Moirai calculates elapsed time and autonomously reconstructs off-screen events. NPCs had conversations you never witnessed. Gossip traveled. Relationships shifted. Internal <strong>Action Records</strong> track future conversational intents, ensuring characters follow through on promises and threats across sessions.</p>
-          <div class="deep-tags"><span>Time-aware</span><span>Off-screen AI</span><span>ActionRecords</span></div>
+          <h3>Relationship Tensors</h3>
+          <p>Trust, intimacy, and shared history are not binary flags. Lelit Distrikt models relationships as dynamic tensors that influence every response. What you say to one character ripples through the <strong>Social Graph</strong>, propagated by gossiping NPCs during off-screen synthesis cycles. The world remembers how you treat its residents, and they speak to each other when you aren't around.</p>
+          <div class="deep-tags"><span>Social Graph</span><span>Knowledge Propagation</span></div>
         </div>
         <div class="deep-card reveal">
-          <div class="deep-card-num">03</div>
-          <h3>Social Propagation Engine</h3>
-          <p>Information travels through the district like gossip in a real town. When Moirai extracts a fact from a conversation, it evaluates each NPC's relationship proximity to the source and schedules <strong>propagation events</strong>. Characters learn things about you from each other, not from an omniscient system. The propagation timing uses real-world clock offsets.</p>
-          <div class="deep-tags"><span>Graph Theory</span><span>Hearsay</span><span>Async Events</span></div>
+          <h3>Episodic State Orchestration</h3>
+          <p>The simulation operates in discrete chapters, with Moirai managing the transition between story states. It coordinates character arrivals, set-piece triggers, and long-term narrative consequences. Every chapter is a layer in the district's history, preserved and accessible through the orchestration core.</p>
+          <div class="deep-tags"><span>Event Scheduling</span><span>Native UE5 Logic</span></div>
         </div>
       </div>
     </div>
@@ -498,7 +490,6 @@
 
       <div style="margin-top: 6rem; display: flex; flex-direction: column; align-items: center; text-align: center;">
         <a class="hero-cta-button reveal" href="mailto:whupert@gmail.com" style="margin-bottom: 1.5rem;">Get in Touch</a>
-        <p class="reveal" style="font-size: 1.1rem; color: var(--stone); margin-bottom: 3rem; font-family: 'Cormorant Garamond', serif; font-style: italic;">whupert@gmail.com</p>
         <p class="reveal" style="font-size: 0.7rem; margin: 3rem auto 0; text-align: center; opacity: 0.4; color: var(--stone); letter-spacing: 0.1em; text-transform: uppercase; max-width: none;">Lelit Distrikt 2026 // A social experiment preserved</p>
       </div>
     </div>
