@@ -567,19 +567,18 @@ p{color:var(--stone);margin-bottom:1.2rem;font-size:1rem}
 .cast-card{background:var(--ink);padding:0}
 .cast-card h3 {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: 400;
   color: #fff;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem;
 }
 .cast-role {
-  font-size: .6rem;
+  font-size: 0.55rem;
   font-weight: 500;
-  letter-spacing: .3em;
+  letter-spacing: normal;
   text-transform: uppercase;
   color: var(--terracotta);
-  margin-bottom: 0.75rem;
-  opacity: 0.8;
+  margin-bottom: 0.8rem;
 }
 .cast-card p {
   font-size: .85rem;
