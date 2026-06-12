@@ -779,8 +779,18 @@ footer .footer-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;fon
 .auggie-float img{width:auto;max-width:100%;height:auto}
 .auggie-float .img-ph{padding-top:120%}
 .cast-portrait .img-ph{padding-top:100%}
-.cast-portrait { position: relative; }
-.cast-portrait img{width:auto;max-width:100%;height:auto}
+.cast-portrait {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.cast-portrait img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+}
 .placeholder-overlay {
   position: absolute;
   top: 50%;
