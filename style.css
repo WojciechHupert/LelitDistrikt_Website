@@ -776,9 +776,11 @@ footer .footer-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;fon
 .img-banner .img-ph{min-height:380px}
 .world-cell-img .img-ph{min-height:140px}
 .auggie-float{float:right;width:38%;margin:0 0 2rem 3rem}
+.auggie-float img{width:auto;max-width:100%;height:auto}
 .auggie-float .img-ph{padding-top:120%}
 .cast-portrait .img-ph{padding-top:100%}
 .cast-portrait { position: relative; }
+.cast-portrait img{width:auto;max-width:100%;height:auto}
 .placeholder-overlay {
   position: absolute;
   top: 50%;
@@ -1547,14 +1549,17 @@ body, a, button, .slide-btn, .dot, .wa-send, .hero-cta, .cta-button, .nav-logo {
 }
 
 .origin-img-frame {
-  width: 100%;
+  width: fit-content;
+  max-width: 100%;
   overflow: hidden;
   border: 1px solid rgba(196, 185, 154, 0.1);
   margin-bottom: 1rem;
 }
 
 .origin-img-frame img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  height: auto;
   display: block;
   filter: grayscale(1) contrast(1.1);
   transition: filter 0.5s ease;
